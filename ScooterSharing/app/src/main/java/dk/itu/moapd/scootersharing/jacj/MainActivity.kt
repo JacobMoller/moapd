@@ -1,13 +1,13 @@
 package dk.itu.moapd.scootersharing.jacj
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
     // A set of private constant used in this class.
@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // GUI variables.
-    private lateinit var scooterName: EditText
-    private lateinit var scooterLocation: EditText
+    private lateinit var scooterName: TextInputLayout
+    private lateinit var scooterLocation: TextInputLayout
     private lateinit var startRideButton: Button
     private lateinit var api_level : TextView
     private val scooter: Scooter = Scooter("","")
@@ -34,11 +34,11 @@ class MainActivity : AppCompatActivity() {
         // Buttons.
         startRideButton = findViewById(R.id.start_ride_button)
         startRideButton.setOnClickListener {
-            if(scooterName.text.isNotEmpty() && scooterLocation.text.isNotEmpty()) {
+            val name: String = scooterName.getEditText()?.getText().toString().trim()
+            val location: String = scooterLocation.getEditText()?.getText().toString().trim()
+            if(name.isNotEmpty() && location.isNotEmpty()) {
                 // Update the object attributes.
-                val name = scooterName.text.toString().trim()
                 scooter.setName(name)
-                val location = scooterLocation.text.toString().trim()
                 scooter.setLocation(location)
 
                 // Reset the text fields and update the UI
@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showMessage() {
         // Print a message in the 'Logcat' system.
+        scooterName.getEditText()?.getText()?.clear();
+        scooterLocation.getEditText()?.getText()?.clear();
+
         Log.d(TAG, scooter.toString())
     }
 }
