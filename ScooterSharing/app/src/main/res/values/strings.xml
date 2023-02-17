@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">ScooterSharing app V1</string>
-    <string name="insert_name">Name</string>
-    <string name="insert_location">Location</string>
-    <string name="start_ride">Start Ride</string>
-</resources>
