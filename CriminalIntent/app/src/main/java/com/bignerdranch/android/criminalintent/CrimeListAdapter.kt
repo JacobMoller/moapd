@@ -40,6 +40,7 @@ class SeriousCrimeHolder(
     override fun bind(crime: Crime) {
         binding.crimeTitle.text = crime.title
         binding.crimeDate.text = crime.date.toString()
+        binding.crimePoliceButton.text = "contact police"
 
         binding.root.setOnClickListener {
             Toast.makeText(
