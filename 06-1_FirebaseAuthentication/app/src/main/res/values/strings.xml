@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Firebase Authentication</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="content_description_sign_out">Sign out</string>
+    <string name="content_description_image">Image</string>
+    <string name="firebase_authentication">Firebase\nAuthentication</string>
+    <string name="firebase_user_description">You are already logged in as %s, you need to log out before logging in as different user.</string>
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
+</resources>
